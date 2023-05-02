@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $navList = [
+        "listItem1" => "CHARACTERS",
+        "listItem2" => "COMICS",
+        "listItem3" => "MOVIES",
+        "listItem4" => "TV",
+        "listItem5" => "GAMES",
+        "listItem6" => "COLLECTIBLES",
+        "listItem7" => "VIDEOS",
+        "listItem8" => "FANS",
+        "listItem9" => "NEWS",
+        "listItem10" => "SHOP",
+    ];
+
+    return view('home', compact("navList"));
 });

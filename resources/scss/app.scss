@@ -1,6 +1,119 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./_partials.scss/typo.scss";
+@import "./_partials.scss/colors.scss";
 
+/********** RESET **********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: yellow;
+    background-color: $secondary-color;
+    color: $secondary-color;
 }
+
+/********** COMMON **********/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/********** HEADER TOP **********/
+
+.header-top {
+    background-color: $primary-color;
+    font-weight: 500;
+}
+
+.header-top > .container > div:first-child {
+    margin-right: 100px;
+}
+
+.header-top i {
+    font-size: 0.7rem;
+}
+
+/********** HEADER BOTTOM **********/
+
+.header-bottom,
+.header-bottom a {
+    color: $main-bg-color;
+}
+
+.logo > img {
+    height: 60px;
+}
+
+.header-bottom li {
+    font-weight: 600;
+}
+
+.header-bottom a:hover {
+    color: $primary-color;
+    transition: color .30s;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar i {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.search-bar > input {
+    border: none;
+    border-bottom: 3px solid #0282f9;
+    padding-right: 20px;
+    width: 150px;
+    font-weight: 600;
+}
+
+.search-bar > input:focus {
+    outline: none;
+}
+
+/********** MAIN**********/
+
+main {
+    background-color: black;
+}
+
+/********** MAIN JUMBO **********/
+
+.jumbo {
+    height: 60vh;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.intro-next-section {
+    position: absolute;
+    bottom: -30px;
+    left: 15%;
+    background-color: $primary-color;
+    padding: 12px 36px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/********** MAIN COMICS DISPLAY **********/
