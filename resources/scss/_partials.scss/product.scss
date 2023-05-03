@@ -1,0 +1,146 @@
+@import "./colors.scss";
+
+.comic-page {
+    background-color: $secondary-color;
+    color: $main-bg-color;
+}
+
+.break {
+    background-color: $primary-color;
+    padding: 40px;
+    position: relative;
+
+    .comic-card {
+        height: 260px;
+        position: absolute;
+        top: -200px;
+        left: 300px;
+        z-index: 50;
+        border: 2px solid $secondary-color;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.comic-details {
+    height: 60vh;
+
+    .left {
+        width: 68%;
+
+        h2 {
+            font-weight: 700;
+        }
+
+        .buy-info {
+            background-color: #55ba59;
+            color: $secondary-color;
+            width: 80%;
+            height: 6vh;
+            
+            .price {
+                padding: 0 10px;
+                border-right: 1px solid $main-bg-color;
+                width: 70%;
+
+                .marker {
+                    color: #bafd9c;
+                }
+            }
+
+            .stock {
+                width: 30%;
+            }
+        }
+    }
+
+    .right {
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.comic-page-mid {
+    background-color: #f6f6f6;
+    height: 60vh;
+
+    h3 {
+        font-weight: 600;
+    }
+
+    .comic-add-info {
+
+        li {
+            border-bottom: 1px solid lightgrey;
+            
+            &:last-child {
+                border-bottom: 1px solid lightgrey;
+            }
+        }
+
+        .left {
+            width: 49%;
+
+            .talent-col {
+                background-color: #f6f6f6;
+                color: $main-bg-color;
+            }
+
+            .col-left {
+                width: 30%;
+            }
+
+            .col-right {
+                width: 70%;
+            }
+        }
+
+        .right {
+            width: 49%;
+
+            .specs-col {
+                background-color: #f6f6f6;
+                color: $main-bg-color;
+            }
+        }
+    }
+}
+
+.comic-page-end {
+    background-color: #f6f6f6;
+    border-top: 1px solid lightgray;
+    
+    .merch-options {
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        padding: 0;
+        
+        .item {
+            color: darkcyan;
+            width: 25%;
+            height: 100%;
+            padding: 15px;
+            border-right: 1px solid lightgrey;
+
+            
+            h3 {
+                font-size: 0.9rem;
+                font-weight: 700;
+            }
+
+            .img-ctn {
+                height: 50px;
+
+                img {
+                    height: 100%;
+                    filter: contrast(50%);
+                }
+            }
+        }
+    }
+}

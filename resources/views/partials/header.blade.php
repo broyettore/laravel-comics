@@ -29,7 +29,7 @@
                 <ul class="d-flex">
                     @foreach ($navList as $navItem)
                     <li class="m-2 p-2">
-                        <a href="#">
+                        <a href="{{ route("home") }}">
                             {{ $navItem }}
                         </a>
                     </li>

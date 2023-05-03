@@ -28,10 +28,50 @@ Route::get('/', function () {
         "listItem10" => "SHOP",
     ];
 
-    return view('home', compact("navList"));
-});
+    $footerList1 = [
+        "listItem1" => "characters",
+        "listItem2" => "Comics",
+        "listItem3" => "Movies",
+        "listItem4" => "TV",
+        "listItem5" => "Games",
+        "listItem6" => "Videos",
+        "listItem7" => "News",
+    ];
 
-Route::get('/', function () {
+    $footerList2 = [
+        "listItem1" => "Shop DC",
+        "listItem2" => "Shop DC Collectibles",
+    ];
+
+    $footerList3 = [
+        "listItem1" => "Terms of Use",
+        "listItem2" => "Privacy Policy(New)",
+        "listItem3" => "Ad Choices",
+        "listItem4" => "Advertising",
+        "listItem5" => "Jobs",
+        "listItem6" => "Subscriptions",
+        "listItem7" => "Talent Workshops",
+        "listItem8" => "CPSC Certificates",
+        "listItem9" => "Ratings",
+        "listItem10" => "Shop Help",
+        "listItem11" => "Contact Us",
+    ];
+
+    $footerList4 = [
+        "listItem1" => "DC",
+        "listItem2" => "MAD Magazine",
+        "listItem3" => "DC Kids",
+        "listItem4" => "DC Universe",
+        "listItem5" => "DC Power Visa",
+    ];
+
+    $comics = config("comics");
+
+
+   return view('home', compact("navList", "footerList1", "footerList2", "footerList3", "footerList4", "comics"));
+})->name("home");
+
+Route::get('/product/{index}', function ($index) {
 
     $navList = [
         "listItem1" => "CHARACTERS",
@@ -81,9 +121,15 @@ Route::get('/', function () {
         "listItem5" => "DC Power Visa",
     ];
 
-    $comics = [
-        'comic' => config('comics')
-    ];
 
-    return view('product', compact("navList", "footerList1", "footerList2", "footerList3", "footerList4"),$comics);
-})-> name('product');
+
+    $comics = config("comics");
+    
+    if($index > count($comics) - 1) {
+        abort(404);
+    }
+    
+    $comicItems = $comics[$index];
+
+    return view('product', compact("navList", "footerList1", "footerList2", "footerList3", "footerList4", "comicItems"));
+ })->name("product");
